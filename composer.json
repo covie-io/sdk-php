@@ -1,0 +1,34 @@
+{
+  "name": "covie/sdk-php",
+  "description": "SDK implementation of Covie API",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Tiffany Taylor",
+      "email": "tiffany@covie.io"
+    }
+  ],
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true,
+      "captainhook/plugin-composer": true
+    }
+  },
+  "require": {
+    "php": "^7.4",
+    "guzzlehttp/guzzle": "^7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {"Covie\\":  "src/"}
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Covie\\SDK\\Test\\": "test/src"
+    }
+  }
+}
