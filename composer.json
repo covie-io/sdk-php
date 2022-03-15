@@ -17,18 +17,19 @@
   },
   "require": {
     "php": "^7.4",
-    "guzzlehttp/guzzle": "^7.0"
+    "guzzlehttp/guzzle": "^7.0",
+    "ext-json": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.5",
     "roave/security-advisories": "dev-latest"
   },
   "autoload": {
-    "psr-4": {"Covie\\":  "src/"}
+    "psr-4": {"Covie\\SDK\\":  "src/"}
   },
   "autoload-dev": {
     "psr-4": {
-      "Covie\\SDK\\Test\\": "test/src"
+      "Covie\\SDK\\Test\\": "test/"
     }
   }
 }

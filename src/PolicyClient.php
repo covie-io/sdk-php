@@ -1,0 +1,38 @@
+<?php
+
+namespace Covie\SDK;
+
+use GuzzleHttp\ClientInterface;
+use Covie\SDK\Model\Policy;
+
+class PolicyClient
+{
+    protected ClientInterface $httpClient;
+
+    public function __construct(ClientInterface $httpClient)
+    {
+        $this->httpClient = $httpClient;
+    }
+
+    public function get(string $id): Policy
+    {
+        return new Policy(json_decode((string) $this->httpClient->request(
+            'GET',
+            'policies/' . $id
+        )->getBody(), true, 512, JSON_THROW_ON_ERROR));
+    }
+
+    public function getLatestDocumentOfType(Policy $policy, string $documentType): string
+    {
+        foreach ($policy->getDocumentHrefs() as $href) {
+            if ($href->getType() === $documentType) {
+                return (string) $this->httpClient->request(
+                    'GET',
+                    $href->getUrl() // need to test this to ensure it interacts with base_uri correctly
+                )->getBody();
+            }
+        }
+
+        throw new \RuntimeException('Could not find a document of the specified type for this policy');
+    }
+}
