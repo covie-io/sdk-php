@@ -9,7 +9,7 @@ class SDKClientTest extends TestCase
 {
     public function testAssertSDKClientType(): void
     {
-        $sdkClient = Client::createFromCredentials('foo', 'bar');
-        $this->assertInstanceOf(\Covie\SDK\Client::class, $sdkClient);
+        $sdkClient = Client::createFromCredentials('cl_foo', 'bar');
+        $this->assertInstanceOf(Client::class, $sdkClient);
     }
 }
