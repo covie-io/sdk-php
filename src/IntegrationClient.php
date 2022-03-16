@@ -14,6 +14,14 @@ class IntegrationClient
         $this->httpClient = $httpClient;
     }
 
+    /**
+     * Returns a new Integration object response wrapper.
+     *
+     * @param string $name
+     * @return Integration
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \JsonException
+     */
     public function create(string $name): Integration
     {
         return new Integration(json_decode((string) $this->httpClient->request(

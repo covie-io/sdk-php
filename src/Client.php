@@ -16,6 +16,16 @@ class Client
         $this->httpClient = $httpClient;
     }
 
+    /**
+     * Creates new SDK Client object based on client ID and secret, utilizing GuzzleHttp Client.
+     * Verifies client ID is correct.
+     * Uses basic HTTP Authentication presently.
+     * TODO: expand to use Bearer tokens.
+     *
+     * @param string $clientId
+     * @param string $clientSecret
+     * @return Client
+     */
     public static function createFromCredentials(
         string $clientId,
         string $clientSecret
@@ -39,11 +49,23 @@ class Client
         return $clientId;
     }
 
+    /**
+     * Returns a GuzzleHttp Client that calls the /integrations endpoint.
+     * Factory method.
+     *
+     * @return IntegrationClient
+     */
     public function integrations(): IntegrationClient
     {
         return new IntegrationClient($this->httpClient);
     }
 
+    /**
+     * Returns a GuzzleHttp Client that calls the /policies endpoint.
+     * Factory method.
+     *
+     * @return PolicyClient
+     */
     public function policies(): PolicyClient
     {
         return new PolicyClient($this->httpClient);

@@ -11,6 +11,11 @@ class DocumentHref implements \JsonSerializable
         $this->json = $json;
     }
 
+    /**
+     * Returns a given document's type. e.g. declaration, insurance_card, evidence_of_insurance
+     *
+     * @return string
+     */
     public function getType(): string
     {
         return $this->json['type'];

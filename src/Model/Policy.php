@@ -11,12 +11,19 @@ class Policy implements \JsonSerializable
         $this->json = $json;
     }
 
+    /**
+     * Returns policy ID. e.g. po_abcdefg
+     *
+     * @return string
+     */
     public function getId(): string
     {
         return $this->json['id'];
     }
 
     /**
+     * Returns an array of document URLs that can be downloaded from a given policy.
+     *
      * @return DocumentHref[]
      */
     public function getDocumentHrefs(): array

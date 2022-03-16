@@ -14,6 +14,14 @@ class PolicyClient
         $this->httpClient = $httpClient;
     }
 
+    /**
+     * Requests a policy based on ID. Returns a new Policy object response wrapper.
+     *
+     * @param string $id
+     * @return Policy
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \JsonException
+     */
     public function get(string $id): Policy
     {
         return new Policy(json_decode((string) $this->httpClient->request(
