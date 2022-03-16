@@ -9,6 +9,8 @@ class Client
 {
     protected ClientInterface $httpClient;
 
+    protected const BASE_URI = 'https://api.covie.io/v1/';
+
     protected function __construct(ClientInterface $httpClient)
     {
         $this->httpClient = $httpClient;
@@ -16,30 +18,34 @@ class Client
 
     public static function createFromCredentials(
         string $clientId,
-        string $clientSecret,
-        string $baseUri = 'https://api.covie.io/v1/'
+        string $clientSecret
     ): Client
+    {
+        return new Client(new HttpClient([
+            'base_uri' => static::BASE_URI,
+            'auth' => [
+                static::assertValidClientId($clientId),
+                $clientSecret,
+            ]
+        ]));
+    }
+
+    protected static function assertValidClientId(string $clientId): string
     {
         if (stripos($clientId, 'cl_') !== 0) {
             throw new \InvalidArgumentException('Client ID must start with cl_.');
         }
 
-        return new Client(new HttpClient([
-            'base_uri' => $baseUri,
-            'auth' => [
-                'username' => $clientId,
-                'password' => $clientSecret,
-            ]
-        ]));
+        return $clientId;
     }
 
     public function integrations(): IntegrationClient
     {
-        return new IntegrationClient($this->httpClient); // factory
+        return new IntegrationClient($this->httpClient);
     }
 
     public function policies(): PolicyClient
     {
-        return new PolicyClient($this->httpClient); // factory
+        return new PolicyClient($this->httpClient);
     }
 }

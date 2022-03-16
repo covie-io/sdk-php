@@ -28,7 +28,7 @@ class PolicyClient
             if ($href->getType() === $documentType) {
                 return (string) $this->httpClient->request(
                     'GET',
-                    $href->getUrl() // need to test this to ensure it interacts with base_uri correctly
+                    $href->getUrl()
                 )->getBody();
             }
         }

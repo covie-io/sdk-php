@@ -21,7 +21,7 @@ class Policy implements \JsonSerializable
      */
     public function getDocumentHrefs(): array
     {
-        return array_map(fn (array $item) => new DocumentHref($item), $this->data['_links']['documents'] ?? []);
+        return array_map(fn (array $item) => new DocumentHref($item), $this->json['_links']['documents'] ?? []);
     }
 
     public function jsonSerialize(): array
