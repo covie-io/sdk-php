@@ -1,24 +1,23 @@
 {
   "name": "covie/sdk-php",
-  "description": "SDK implementation of Covie API",
-  "type": "project",
+  "type": "library",
+  "description": "PHP SDK to work with Covie's API",
+  "keywords": ["covie", "api"],
+  "homepage": "https://github.com/covie/sdk-php",
+  "license": "MIT",
   "authors": [
     {
-      "name": "Tiffany Taylor",
-      "email": "tiffany@covie.io"
+      "name": "Covie API Team",
+      "email": "sdk@covie.io"
     }
   ],
   "config": {
-    "sort-packages": true,
-    "allow-plugins": {
-      "composer/package-versions-deprecated": true,
-      "captainhook/plugin-composer": true
-    }
+    "sort-packages": true
   },
   "require": {
     "php": "^7.4",
-    "guzzlehttp/guzzle": "^7.0",
-    "ext-json": "*"
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.5",
