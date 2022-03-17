@@ -9,17 +9,10 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Covie\SDK\Model\DocumentType;
 
-// Extends SDK Client allowing overriding API endpoint to a local environment
-class LocalClient extends \Covie\SDK\Client
-{
-    protected const BASE_URI = 'http://localhost/v1/';
-}
-
-
 /*
  * SDK Client Initialization step
  */
-$sdkClient = LocalClient::createFromCredentials(USERNAME, PASSWORD);
+$sdkClient = \Covie\SDK\Client::createFromCredentials(CLIENT_ID, CLIENT_SECRET);
 
 
 /*
