@@ -31,6 +31,11 @@ class Integration implements \JsonSerializable
         return $this->json['key'];
     }
 
+    public function getName(): string
+    {
+        return $this->json['name'];
+    }
+
     public function jsonSerialize(): array
     {
         return $this->json;
