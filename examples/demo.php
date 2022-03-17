@@ -5,7 +5,7 @@
 const USERNAME = '';
 const PASSWORD = '';
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use Covie\SDK\Model\DocumentType;
 
