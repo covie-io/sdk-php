@@ -54,8 +54,8 @@ echo json_encode($policy->jsonSerialize(), JSON_PRETTY_PRINT) . PHP_EOL;
 We can also retrieve its documents. For example to retrieve the declaration PDF and write to disk:
 
 ```php
-use Covie\SDK\Model\DocumentType
-$pdfContent = $sdk->policies()->getLatestDocumentOfType($policy, DocumentType::DECLARATION)
+use Covie\SDK\Model\DocumentType;
+$pdfContent = $sdk->policies()->getLatestDocumentOfType($policy, DocumentType::DECLARATION);
 file_put_contents('declaration.pdf', $pdfContent);
 ```
 
