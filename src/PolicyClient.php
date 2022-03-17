@@ -32,11 +32,11 @@ class PolicyClient
 
     public function getLatestDocumentOfType(Policy $policy, string $documentType): string
     {
-        foreach ($policy->getDocumentHrefs() as $href) {
-            if ($href->getType() === $documentType) {
+        foreach ($policy->getDocumentLinks() as $document) {
+            if ($document->getType() === $documentType) {
                 return (string) $this->httpClient->request(
                     'GET',
-                    $href->getUrl()
+                    $document->getUrl()
                 )->getBody();
             }
         }

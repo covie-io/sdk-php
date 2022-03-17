@@ -1,0 +1,214 @@
+{
+  "id": "po_y7v2nqqpyitfctqq",
+  "object": "policy",
+  "fingerprint": "dewbef3owkt2qf7iznev",
+  "carrier": {
+    "name": "Progressive"
+  },
+  "number": "950113281",
+  "masked_number": "95*****81",
+  "line": "personal_auto",
+  "policyholders": [
+    {
+      "type": "person",
+      "name": {
+        "full": "John Q Smith",
+        "first": "John",
+        "middle": "Q",
+        "last": "Smith"
+      },
+      "address": {
+        "line1": "123 Easy Street",
+        "line2": null,
+        "city": "Anytown",
+        "state": "CA",
+        "postal_code": "11111"
+      },
+      "email": {
+        "address": "john@example.com",
+        "is_primary": true
+      },
+      "phone": {
+        "type": "home",
+        "number": "+15555555555",
+        "is_primary": true
+      },
+      "is_primary": true
+    },
+    {
+      "type": "person",
+      "name": {
+        "full": "Sue Smith",
+        "first": "Sue",
+        "middle": null,
+        "last": "Smith"
+      },
+      "address": null,
+      "email": {
+        "address": "sue@example.com",
+        "is_primary": false
+      },
+      "phone": {
+        "type": "mobile",
+        "number": "+15555555556",
+        "is_primary": true
+      },
+      "is_primary": false
+    }
+  ],
+  "vehicles": [
+    {
+      "vin": "1FMYU04175KA69821",
+      "make": "Ford",
+      "model": "Escape",
+      "year": "2005",
+      "annual_mileage": 12000,
+      "usage": "commute",
+      "ownership": "own",
+      "drivers": [
+        {
+          "name": "John Smith",
+          "age": 32,
+          "date_of_birth": "1990-01-01",
+          "marital_status": "married",
+          "gender": "male",
+          "age_licensed": 16,
+          "license_number": null,
+          "license_state": null,
+          "is_primary": true
+        },
+        {
+          "name": "Sue Smith",
+          "age": 29,
+          "date_of_birth": "1993-01-01",
+          "marital_status": "married",
+          "gender": "female",
+          "age_licensed": 16,
+          "license_number": null,
+          "license_state": null,
+          "is_primary": false
+        }
+      ],
+      "garaging_address": {
+        "line1": "123 Easy Street",
+        "line2": null,
+        "city": "Anytown",
+        "state": "CA",
+        "postal_code": "11111"
+      },
+      "interests": [],
+      "coverages": {
+        "bodily_injury": {
+          "name": "bodily_injury",
+          "limits": {
+            "occurrence": {
+              "unit": "USD",
+              "value": 300000
+            },
+            "person": {
+              "unit": "USD",
+              "value": 100000
+            }
+          },
+          "deductible": null,
+          "premium": {
+            "unit": "USD",
+            "value": 90
+          }
+        },
+        "personal_property": {
+          "name": "personal_property",
+          "limits": {
+            "occurrence": {
+              "unit": "USD",
+              "value": 100000
+            }
+          },
+          "deductible": null,
+          "premium": {
+            "unit": "USD",
+            "value": 25
+          }
+        },
+        "uninsured_bodily_injury": {
+          "name": "uninsured_bodily_injury",
+          "limits": {
+            "occurrence": {
+              "unit": "USD",
+              "value": 300000
+            },
+            "person": {
+              "unit": "USD",
+              "value": 100000
+            }
+          },
+          "deductible": null,
+          "premium": {
+            "unit": "USD",
+            "value": 25
+          }
+        },
+        "uninsured_property_damage": {
+          "name": "uninsured_property_damage",
+          "limits": {
+            "occurrence": {
+              "unit": "USD",
+              "value": 50000
+            }
+          },
+          "deductible": {
+            "unit": "USD",
+            "value": 250
+          },
+          "premium": {
+            "unit": "USD",
+            "value": 10
+          }
+        }
+      },
+      "discounts": []
+    }
+  ],
+  "status": "active",
+  "premium": {
+    "unit": "usd_cents",
+    "value": 107550
+  },
+  "term_length": {
+    "unit": "months",
+    "value": 6
+  },
+  "inception_date": "2022-01-01",
+  "expiration_date": "2023-01-01",
+  "cancellation_date": null,
+  "cancellation_reason": null,
+  "linked_at": "2021-12-20T00:00:00Z",
+  "last_synced_at": "2022-01-01T00:00:00Z",
+  "_links": {
+    "documents": [
+      {
+        "type": "declaration",
+        "content_type": "application/pdf",
+        "href": "/v1/policies/po_y7v2nqqpyitfctqq/documents/declaration"
+      },
+      {
+        "type": "insurance_card",
+        "content_type": "application/pdf",
+        "href": "/v1/policies/po_y7v2nqqpyitfctqq/documents/insurance_card"
+      },
+      {
+        "type": "evidence_of_insurance",
+        "content_type": "application/pdf",
+        "href": "/v1/policies/po_y7v2nqqpyitfctqq/documents/evidence_of_insurance"
+      },
+      {
+        "type": "cancellation",
+        "content_type": "application/pdf",
+        "href": "/v1/policies/po_y7v2nqqpyitfctqq/documents/cancellation"
+      }
+    ],
+    "carrier_logo": {
+      "href": "https://example.com/image.jpeg"
+    }
+  }
+}

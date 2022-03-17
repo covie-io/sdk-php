@@ -31,9 +31,9 @@ class SDKClientTest extends TestCase
 
         /** @var Uri $uri */
         $uri = $guzzleConfig['base_uri'];
-        $this->assertEquals('https://api.covie.io/v1/', (string) $uri);
+        $this->assertSame('https://api.covie.io/v1/', (string) $uri);
 
-        $this->assertEquals(['cl_foo', 'bar'], $guzzleConfig['auth']);
+        $this->assertSame(['cl_foo', 'bar'], $guzzleConfig['auth']);
     }
 
     public function testCreateFromCredentialsFailsOnInvalidClientId(): void
