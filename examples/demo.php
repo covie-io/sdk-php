@@ -5,7 +5,7 @@
 const CLIENT_ID = '';
 const CLIENT_SECRET = '';
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use Covie\SDK\Model\DocumentType;
 
