@@ -9,7 +9,7 @@
 
     <testsuites>
         <testsuite name="unit">
-            <directory>./test/src/Unit</directory>
+            <directory>./test/Unit</directory>
         </testsuite>
     </testsuites>
 
